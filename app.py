@@ -37,7 +37,7 @@ def transform_text(text):
 tfidf = pickle.load(open('vectorizer.pkl','rb'))
 model = pickle.load(open('model.pkl','rb'))
 
-st.title("SMS Spam Classifier - Made By Shubham Tyagi (01515603121) & Saksham Jain (11215603121)")
+st.title("SMS & Email Spam Classifier - Made By Shubham Tyagi (01515603121) & Saksham Jain (11215603121)")
 
 input_sms = st.text_area("Enter the Message (SMS)")
 
