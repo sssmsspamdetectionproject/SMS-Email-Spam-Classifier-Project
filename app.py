@@ -39,7 +39,7 @@ model = pickle.load(open('model.pkl','rb'))
 
 st.title("SMS Spam Classifier - Made By Shubham Tyagi (01515603121) & Saksham Jain (11215603121)")
 
-input_sms = st.text_area("Enter the message")
+input_sms = st.text_area("Enter the Message (SMS)")
 
 if st.button('Predict'):
 
