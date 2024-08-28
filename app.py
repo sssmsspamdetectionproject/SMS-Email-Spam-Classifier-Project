@@ -43,13 +43,14 @@ if st.button('Predict'):
     transformed_sms = transform_text(input_sms)
     
     # Vectorize the transformed text
-    vector_input = tfidf.transform([transformed_sms])
+    try:
+        vector_input = tfidf.transform([transformed_sms])
+    except Exception as e:
+        st.error(f"Error during vectorization: {e}")
     
     # Predict using the loaded model
-    result = model.predict(vector_input)[0]
-    
-    # Display the result
-    if result == 1:
-        st.header("Spam")
-    else:
-        st.header("Not Spam")
+    try:
+        result = model.predict(vector_input)[0]
+        st.header("Spam" if result == 1 else "Not Spam")
+    except Exception as e:
+        st.error(f"Error during prediction: {e}")
